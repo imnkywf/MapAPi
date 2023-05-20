@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
+const port = process.env.PORT || 3000; // Use the assigned port or 3000 as fallback
 
 let allData = [];
 
@@ -38,6 +39,6 @@ app.get('/api/get', (req, res) => {
   res.json(allData);
 });
 
-app.listen(80, () => {
-  console.log('running at 127.0.0.1:80');
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
